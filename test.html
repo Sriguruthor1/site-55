@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="BUNIC AD'S LAB — Shaping Unseen Realities. A creative advertising & digital marketing agency crafting stories that captivate and designs that endure. Social, Branding, SEO, Ads & Media." />
+<meta name="theme-color" content="#0a1a0f" />
+<title>BUNIC AD'S LAB — Shaping Unseen Realities | Digital Marketing & Branding</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   BUNIC AD'S LAB — single-file website
+   Palette inspired by the BUNIC logo gradient (blue→teal→lime)
+   ========================================================= */
+:root{
+  --blue:#4ade80;
+  --teal:#86efac;
+  --teal-d:#4ade80;
+  --lime:#bbf7d0;
+  --ink:#f0fdf4;
+  --ink-2:#dcfce7;
+  --ink-3:#bbf7d0;
+  --muted:#86efac;
+  --muted-2:#6ee7b7;
+  --bg:#0a1a0f;
+  --soft:#0f2318;
+  --soft-2:#122a1c;
+  --line:#1a3a24;
+  --grad:linear-gradient(120deg,#16a34a 0%,#4ade80 52%,#bbf7d0 100%);
+  --grad-soft:linear-gradient(120deg,rgba(22,163,74,.18),rgba(74,222,128,.15) 52%,rgba(187,247,208,.12));
+  --shadow-sm:0 6px 18px rgba(0,0,0,.35);
+  --shadow:0 18px 45px rgba(0,0,0,.45);
+  --shadow-lg:0 30px 70px rgba(0,0,0,.55);
+  --r:18px;
+  --r-lg:26px;
+  --maxw:1200px;
+  --head-h:74px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  color:#e2f5e9;
+  background:var(--bg);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4,.brand-word{font-family:'Poppins',sans-serif;line-height:1.12;letter-spacing:-.02em}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.section{padding:96px 0;position:relative}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Poppins',sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--teal-d);
+  background:var(--grad-soft);padding:8px 16px;border-radius:999px;border:1px solid rgba(19,182,166,.25);
+}
+.section-head{max-width:720px;margin:0 auto 56px;text-align:center}
+.section-head h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:800;margin:16px 0 14px;color:#e2f5e9}
+.section-head p{color:#86efac;font-size:1.05rem}
+
+/* Buttons */
+.btn{
+  --b:var(--ink);
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:'Poppins',sans-serif;font-weight:600;font-size:.98rem;
+  padding:14px 26px;border-radius:999px;border:1.5px solid transparent;
+  cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease;
+  white-space:nowrap;
+}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 12px 26px rgba(19,182,166,.35)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 34px rgba(19,182,166,.45)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal-d);transform:translateY(-3px)}
+.btn-light{background:#fff;color:var(--ink)}
+.btn-light:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.btn-outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.btn-outline-light:hover{background:rgba(255,255,255,.12);transform:translateY(-3px)}
+
+/* ============ TOP UTILITY BAR ============ */
+.topbar{
+  background:#0a1a0f;color:#a7f3c0;font-size:.82rem;
+  border-bottom:1px solid rgba(74,222,128,.12);
+}
+.topbar .container{display:flex;align-items:center;justify-content:space-between;height:42px;gap:14px}
+.topbar .tb-left,.topbar .tb-right{display:flex;align-items:center;gap:18px}
+.topbar a{display:inline-flex;align-items:center;gap:7px;color:#a7f3c0;transition:color .2s}
+.topbar a:hover{color:var(--lime)}
+.topbar svg{width:14px;height:14px;opacity:.85}
+.topbar .tag{color:var(--lime);font-weight:600;letter-spacing:.04em}
+@media(max-width:820px){.topbar .tb-left span:not(.tag-wrap){display:none}.topbar{font-size:.76rem}}
+@media(max-width:560px){.topbar .tb-right a span{display:none}}
+
+/* ============ HEADER / NAV ============ */
+.header{
+  position:sticky;top:0;z-index:60;
+  background:rgba(10,26,15,.88);backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid transparent;transition:box-shadow .3s,border-color .3s,background .3s;
+}
+.header.scrolled{box-shadow:var(--shadow-sm);border-color:var(--line);background:rgba(10,26,15,.96)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:var(--head-h)}
+.logo{display:flex;align-items:center;gap:11px}
+.logo .logo-img{height:48px;width:48px;object-fit:cover;border-radius:50%;filter:drop-shadow(0 4px 10px rgba(74,222,128,.3))}
+.brand-word{font-weight:800;font-size:1.32rem;letter-spacing:.02em}
+.brand-word small{display:block;font-family:'Inter';font-weight:600;font-size:.58rem;letter-spacing:.34em;color:var(--muted-2);text-transform:uppercase;margin-top:-2px}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a{
+  font-family:'Poppins',sans-serif;font-weight:500;font-size:.95rem;color:#a7f3c0;
+  padding:9px 14px;border-radius:10px;position:relative;transition:color .2s,background .2s;
+}
+.nav-links a:hover{color:var(--teal-d);background:var(--soft)}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.nav-cta .btn{padding:11px 22px}
+.burger{display:none;width:46px;height:46px;border-radius:12px;border:1px solid var(--line);background:var(--soft);cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.burger span{width:20px;height:2px;background:#a7f3c0;border-radius:2px;transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Mobile menu */
+.mobile-menu{
+  position:fixed;inset:0;z-index:55;background:rgba(11,18,32,.55);backdrop-filter:blur(4px);
+  opacity:0;visibility:hidden;transition:.3s;
+}
+.mobile-menu.open{opacity:1;visibility:visible}
+.mobile-menu .panel{
+  position:absolute;top:0;right:0;height:100%;width:min(86vw,360px);background:#0f2318;
+  transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);
+  padding:calc(var(--head-h) + 18px) 26px 30px;display:flex;flex-direction:column;gap:6px;overflow-y:auto;
+}
+.mobile-menu.open .panel{transform:translateX(0)}
+.mobile-menu a{font-family:'Poppins',sans-serif;font-weight:600;font-size:1.08rem;padding:14px 12px;border-radius:12px;border-bottom:1px solid var(--soft-2);color:#a7f3c0}
+.mobile-menu a:hover{color:var(--teal-d);background:var(--soft)}
+.mobile-menu .mm-cta{margin-top:18px;display:flex;flex-direction:column;gap:12px}
+.mobile-menu .mm-contact{margin-top:auto;padding-top:22px;color:var(--muted);font-size:.9rem;display:flex;flex-direction:column;gap:8px}
+.mobile-menu .mm-contact a{border:0;padding:6px 0;font-family:'Inter';font-weight:500;font-size:.95rem;display:flex;align-items:center;gap:9px}
+
+@media(max-width:980px){
+  .nav-links,.nav-cta{display:none}
+  .burger{display:flex}
+}
+
+/* ============ HERO ============ */
+.hero{position:relative;padding:70px 0 90px;overflow:hidden;background:
+  radial-gradient(1100px 520px at 85% -10%,rgba(74,222,128,.12),transparent 60%),
+  radial-gradient(900px 520px at 0% 0%,rgba(22,163,74,.1),transparent 55%),
+  var(--bg);
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+.hero h1{font-size:clamp(2.3rem,5.2vw,4rem);font-weight:900;margin:20px 0 18px}
+.hero h1 .line{display:block}
+.hero p.lead{font-size:1.12rem;color:#86efac;max-width:540px;margin-bottom:30px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:34px}
+.hero-trust{display:flex;align-items:center;gap:22px;flex-wrap:wrap;color:#86efac;font-size:.9rem}
+.hero-trust .stars{color:#f5b301;letter-spacing:2px;font-size:1rem}
+.hero-trust b{color:#bbf7d0;font-family:'Poppins'}
+.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.hero-badges span{font-size:.78rem;font-weight:600;color:#4ade80;background:var(--soft);border:1px solid var(--line);padding:7px 13px;border-radius:999px;box-shadow:var(--shadow-sm)}
+
+/* Hero visual — recreation of the "FUEL YOUR BUSINESS" gauge creative */
+.hero-visual{position:relative}
+.fuel-card{
+  position:relative;background:#0f2318;border-radius:var(--r-lg);box-shadow:var(--shadow-lg);
+  padding:46px 38px 40px;border:1px solid var(--line);overflow:hidden;
+}
+.fuel-card::before{content:"";position:absolute;inset:0;background:var(--grad-soft);opacity:.5;pointer-events:none}
+.fuel-dots{position:absolute;top:18px;left:18px;display:grid;grid-template-columns:repeat(5,6px);gap:6px}
+.fuel-dots i{width:6px;height:6px;border-radius:50%;background:rgba(31,127,196,.35)}
+.fuel-logo{position:absolute;top:16px;right:18px;width:46px;height:46px}
+.fuel-fb,.fuel-yt{position:absolute;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;box-shadow:var(--shadow);color:#fff}
+.fuel-fb{top:74px;left:30px;background:#1877f2;animation:floaty 5s ease-in-out infinite}
+.fuel-yt{bottom:96px;right:34px;background:#ff0033;animation:floaty 6s ease-in-out infinite .6s}
+.fuel-fb svg,.fuel-yt svg{width:22px;height:22px}
+.fuel-body{position:relative;text-align:center;padding:30px 0 6px}
+.fuel-body .k{font-family:'Poppins';font-weight:700;letter-spacing:.04em;color:#bbf7d0;font-size:1.05rem}
+.fuel-body .big{font-family:'Poppins';font-weight:900;font-size:clamp(2.4rem,6vw,3.4rem);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin:4px 0}
+.fuel-body .sub{font-family:'Poppins';font-weight:700;letter-spacing:.02em;color:#bbf7d0}
+.fuel-body .sub em{font-style:normal;color:#4ade80}
+.gauge{position:relative;margin:34px 6px 6px}
+.gauge .track{height:3px;background:#1a3a24;border-radius:3px;position:relative}
+.gauge .ends{display:flex;justify-content:space-between;font-family:'Poppins';font-weight:700;font-size:.72rem;letter-spacing:.12em;color:var(--muted);margin-top:8px}
+.gauge .knob{
+  position:absolute;top:50%;left:18%;transform:translate(-50%,-50%);
+  width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#22c55e,#16a34a);
+  display:grid;place-items:center;color:#fff;box-shadow:0 10px 22px rgba(22,163,74,.45);
+  animation:slideKnob 4.5s cubic-bezier(.5,0,.2,1) infinite;
+}
+.gauge .knob svg{width:26px;height:26px}
+@keyframes slideKnob{0%{left:14%}50%{left:86%}100%{left:14%}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+.float-chip{
+  position:absolute;background:#0f2318;border-radius:14px;box-shadow:var(--shadow);padding:12px 15px;
+  display:flex;align-items:center;gap:10px;font-size:.85rem;font-weight:600;border:1px solid var(--line);color:#bbf7d0;
+}
+.float-chip .ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;color:#fff}
+.float-chip.c1{top:-14px;left:-12px;animation:floaty 6s ease-in-out infinite}
+.float-chip.c1 .ic{background:var(--blue)}
+.float-chip.c2{bottom:-16px;right:-10px;animation:floaty 7s ease-in-out infinite .8s}
+.float-chip.c2 .ic{background:var(--teal)}
+.float-chip small{display:block;color:#6ee7b7;font-weight:500;font-size:.72rem}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .hero-visual{max-width:480px;margin:0 auto;width:100%}
+}
+
+/* ============ MARQUEE STRIP ============ */
+.marquee{background:#0a1a0f;color:#e2f5e9;padding:18px 0;overflow:hidden;border-top:1px solid rgba(74,222,128,.12);border-bottom:1px solid rgba(74,222,128,.12)}
+.marquee .track-m{display:flex;gap:48px;width:max-content;animation:scrollx 26s linear infinite}
+.marquee .track-m span{font-family:'Poppins';font-weight:700;font-size:1.05rem;letter-spacing:.04em;display:inline-flex;align-items:center;gap:48px;color:#bbf7d0;white-space:nowrap}
+.marquee .track-m span::after{content:"✦";color:var(--lime);margin-left:48px}
+.marquee:hover .track-m{animation-play-state:paused}
+@keyframes scrollx{to{transform:translateX(-50%)}}
+
+/* ============ ABOUT ============ */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-visual{position:relative}
+.about-card{
+  background:#0f2318;color:#e2f5e9;border-radius:var(--r-lg);padding:44px;position:relative;overflow:hidden;
+  box-shadow:var(--shadow-lg);
+}
+.about-card::after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:var(--grad);filter:blur(70px);opacity:.35;top:-80px;right:-80px}
+.about-card .yr{font-family:'Poppins';font-weight:900;font-size:5rem;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.about-card .yr-l{font-family:'Poppins';font-weight:800;font-size:1.6rem;letter-spacing:.04em}
+.about-card .tagline{margin-top:18px;color:#86efac;font-size:1rem;position:relative}
+.about-card .milestone{margin-top:22px;display:inline-flex;align-items:center;gap:9px;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.2);padding:9px 16px;border-radius:999px;font-size:.82rem;font-weight:600;color:var(--lime)}
+.about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.about-stats .st{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center;box-shadow:var(--shadow-sm)}
+.about-stats .st b{font-family:'Poppins';font-weight:800;font-size:1.7rem;display:block;color:#4ade80}
+.about-stats .st span{font-size:.78rem;color:#86efac}
+.about-text h2{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:800;margin:16px 0 16px}
+.about-text p{color:#86efac;margin-bottom:16px}
+.about-points{display:grid;gap:14px;margin:24px 0 30px}
+.about-points li{display:flex;gap:13px;align-items:flex-start}
+.about-points .tick{flex:0 0 auto;width:26px;height:26px;border-radius:8px;background:var(--grad-soft);color:var(--teal-d);display:grid;place-items:center;border:1px solid rgba(74,222,128,.3)}
+.about-points .tick svg{width:15px;height:15px}
+.about-points b{font-family:'Poppins';font-weight:600;color:#bbf7d0}
+@media(max-width:880px){.about-grid{grid-template-columns:1fr;gap:40px}}
+
+/* ============ SERVICES ============ */
+.services{background:var(--soft)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.svc{
+  background:#0f2318;border:1px solid var(--line);border-radius:var(--r);padding:32px 28px;position:relative;overflow:hidden;
+  transition:transform .3s,box-shadow .3s,border-color .3s;
+}
+.svc::before{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.svc:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:transparent}
+.svc:hover::before{transform:scaleX(1)}
+.svc .ic{width:58px;height:58px;border-radius:16px;background:var(--grad-soft);display:grid;place-items:center;color:var(--teal-d);margin-bottom:20px;transition:.3s}
+.svc:hover .ic{background:var(--grad);color:#fff;transform:rotate(-6deg) scale(1.05)}
+.svc .ic svg{width:28px;height:28px}
+.svc h3{font-size:1.25rem;font-weight:700;margin-bottom:10px;color:#bbf7d0}
+.svc p{color:#86efac;font-size:.96rem;margin-bottom:16px}
+.svc .tags{display:flex;flex-wrap:wrap;gap:7px}
+.svc .tags span{font-size:.72rem;font-weight:600;color:#4ade80;background:var(--bg);padding:5px 11px;border-radius:999px}
+@media(max-width:900px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.svc-grid{grid-template-columns:1fr}}
+
+/* ============ PHILOSOPHY (dark) ============ */
+.philosophy{background:#0a1a0f;color:#e2f5e9;position:relative;overflow:hidden}
+.philosophy::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(700px 360px at 12% 10%,rgba(31,127,196,.22),transparent 60%),
+  radial-gradient(700px 360px at 90% 90%,rgba(163,230,53,.14),transparent 60%);}
+.philosophy .section-head h2{color:#e2f5e9}
+.philosophy .section-head p{color:#86efac}
+.philosophy .eyebrow{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:var(--lime)}
+.quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative}
+.quote{
+  background:rgba(74,222,128,.04);border:1px solid rgba(74,222,128,.12);border-radius:var(--r);
+  padding:34px 30px;transition:.3s;position:relative;
+}
+.quote:hover{transform:translateY(-6px);border-color:rgba(74,222,128,.4);background:rgba(74,222,128,.08)}
+.quote .qmark{font-family:'Poppins';font-weight:900;font-size:3.4rem;line-height:.6;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.quote p{font-family:'Poppins';font-weight:600;font-size:1.18rem;line-height:1.4;margin:14px 0 18px;color:#e2f5e9}
+.quote .by{color:var(--lime);font-weight:600;font-size:.85rem;letter-spacing:.04em}
+.quote.feat{grid-column:span 1;background:var(--grad);border:0}
+.quote.feat p{color:#06281f}
+.quote.feat .qmark,.quote.feat .by{color:#06281f;-webkit-text-fill-color:#06281f}
+@media(max-width:900px){.quote-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.quote-grid{grid-template-columns:1fr}}
+
+/* ============ PROCESS ============ */
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:step}
+.proc{position:relative;padding:30px 24px;border:1px solid var(--line);border-radius:var(--r);background:#0f2318;transition:.3s}
+.proc:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.proc .num{counter-increment:step;font-family:'Poppins';font-weight:900;font-size:2.6rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.proc .num::before{content:"0" counter(step)}
+.proc h3{font-size:1.12rem;font-weight:700;margin:8px 0 8px;color:#bbf7d0}
+.proc p{color:#86efac;font-size:.92rem}
+.proc .ic{position:absolute;top:26px;right:24px;color:#1a3a24}
+.proc .ic svg{width:34px;height:34px}
+@media(max-width:900px){.proc-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.proc-grid{grid-template-columns:1fr}}
+
+/* ============ WHY / FEATURES ============ */
+.why{background:var(--soft)}
+.why-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+.why-list{display:grid;gap:18px}
+.why-item{display:flex;gap:16px;background:#0f2318;border:1px solid var(--line);border-radius:16px;padding:22px;transition:.3s}
+.why-item:hover{transform:translateX(6px);box-shadow:var(--shadow-sm);border-color:rgba(19,182,166,.4)}
+.why-item .ic{flex:0 0 auto;width:50px;height:50px;border-radius:14px;background:var(--grad);color:#fff;display:grid;place-items:center}
+.why-item .ic svg{width:24px;height:24px}
+.why-item h4{font-size:1.08rem;font-weight:700;margin-bottom:4px;color:#bbf7d0}
+.why-item p{color:#86efac;font-size:.93rem}
+.why-visual{position:relative}
+.why-card{background:#0f2318;color:#e2f5e9;border-radius:var(--r-lg);padding:40px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.why-card::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:var(--grad);filter:blur(70px);opacity:.3;bottom:-70px;left:-60px}
+.why-card h3{font-size:1.5rem;font-weight:800;margin-bottom:8px;position:relative}
+.why-card p{color:#86efac;position:relative;margin-bottom:24px}
+.why-card .big-stat{display:flex;align-items:baseline;gap:10px;position:relative}
+.why-card .big-stat b{font-family:'Poppins';font-weight:900;font-size:3.4rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.why-card .big-stat span{color:#bbf7d0;font-weight:600}
+.why-card .hastag{margin-top:24px;font-family:'Poppins';font-weight:800;font-size:1.4rem;letter-spacing:.02em;position:relative}
+.why-card .hastag em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+@media(max-width:880px){.why-grid{grid-template-columns:1fr;gap:36px}}
+
+/* ============ CTA BANNER ============ */
+.cta-band{padding:0}
+.cta-inner{
+  background:var(--grad);border-radius:var(--r-lg);padding:54px 48px;color:#06281f;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;box-shadow:var(--shadow-lg);
+}
+.cta-inner::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.18);top:-120px;right:-60px}
+.cta-inner::after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.12);bottom:-110px;left:30%}
+.cta-inner h2{font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:900;position:relative;max-width:620px}
+.cta-inner p{position:relative;font-weight:600;opacity:.85;margin-top:8px}
+.cta-inner .btns{position:relative;display:flex;gap:14px;flex-wrap:wrap}
+.cta-inner .btn-dark{background:#0a1a0f;color:#e2f5e9}
+.cta-inner .btn-dark:hover{transform:translateY(-3px);box-shadow:0 16px 30px rgba(0,0,0,.3)}
+
+/* ============ ENQUIRY / CONTACT ============ */
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:stretch}
+.contact-info{background:#0f2318;color:#e2f5e9;border-radius:var(--r-lg);padding:42px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.contact-info::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:var(--grad);filter:blur(80px);opacity:.3;top:-80px;right:-80px}
+.contact-info h3{font-size:1.7rem;font-weight:800;position:relative;margin-bottom:10px}
+.contact-info > p{color:#86efac;position:relative;margin-bottom:28px}
+.ci-list{display:grid;gap:16px;position:relative}
+.ci{display:flex;gap:15px;align-items:flex-start}
+.ci .ic{flex:0 0 auto;width:48px;height:48px;border-radius:14px;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.2);display:grid;place-items:center;color:var(--lime)}
+.ci .ic svg{width:22px;height:22px}
+.ci .lbl{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);font-weight:600}
+.ci a,.ci .val{font-family:'Poppins';font-weight:600;font-size:1.02rem;color:#bbf7d0;display:block;transition:color .2s}
+.ci a:hover{color:var(--lime)}
+.ci-socials{display:flex;gap:12px;margin-top:auto;padding-top:28px;position:relative}
+.ci-socials a{width:44px;height:44px;border-radius:12px;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.2);display:grid;place-items:center;color:#bbf7d0;transition:.25s}
+.ci-socials a:hover{background:var(--grad);transform:translateY(-4px);border-color:transparent}
+.ci-socials svg{width:20px;height:20px}
+
+/* Enquiry form */
+.enquiry{background:#0f2318;border:1px solid var(--line);border-radius:var(--r-lg);padding:42px;box-shadow:var(--shadow)}
+.enquiry h3{font-size:1.5rem;font-weight:800;margin-bottom:6px;color:#bbf7d0}
+.enquiry > p{color:#86efac;margin-bottom:24px;font-size:.96rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:16px;position:relative}
+.field label{display:block;font-family:'Poppins';font-weight:600;font-size:.85rem;margin-bottom:7px;color:#86efac}
+.field label .req{color:#e0457b}
+.field input,.field select,.field textarea{
+  width:100%;font-family:'Inter';font-size:.96rem;color:#e2f5e9;
+  background:#122a1c;border:1.5px solid var(--line);border-radius:12px;padding:13px 15px;transition:.2s;
+}
+.field textarea{resize:vertical;min-height:120px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--teal-d);background:#0f2318;box-shadow:0 0 0 4px rgba(74,222,128,.12)}
+.field input::placeholder,.field textarea::placeholder{color:#4a7a5a}
+.budget-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.budget-grid label{
+  display:flex;align-items:center;gap:9px;cursor:pointer;font-family:'Inter';font-weight:500;font-size:.9rem;
+  background:#122a1c;border:1.5px solid var(--line);border-radius:12px;padding:11px 13px;margin:0;transition:.2s;color:#86efac;
+}
+.budget-grid input{width:auto;margin:0;accent-color:var(--teal-d)}
+.budget-grid label:hover{border-color:var(--teal)}
+.budget-grid input:checked + span{color:var(--teal-d);font-weight:600}
+.budget-grid label:has(input:checked){border-color:var(--teal);background:var(--grad-soft)}
+.form-note{font-size:.78rem;color:var(--muted-2);margin:6px 0 18px;display:flex;align-items:center;gap:7px}
+.form-note svg{width:14px;height:14px;color:var(--teal)}
+.enquiry .btn{width:100%}
+.form-status{margin-top:16px;padding:14px 16px;border-radius:12px;font-size:.92rem;font-weight:600;display:none;align-items:center;gap:10px}
+.form-status.show{display:flex}
+.form-status.ok{background:rgba(22,163,74,.1);color:#15803d;border:1px solid rgba(22,163,74,.3)}
+.form-status.err{background:rgba(224,69,123,.1);color:#be185d;border:1px solid rgba(224,69,123,.3)}
+.form-status svg{width:18px;height:18px;flex:0 0 auto}
+@media(max-width:880px){.contact-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.form-row{grid-template-columns:1fr}.budget-grid{grid-template-columns:1fr}.enquiry,.contact-info{padding:30px 24px}}
+
+/* ============ FAQ ============ */
+.faq{background:var(--soft)}
+.faq-wrap{max-width:820px;margin:0 auto;display:grid;gap:14px}
+.faq-item{background:#0f2318;border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.25s}
+.faq-item.open{box-shadow:var(--shadow-sm);border-color:rgba(19,182,166,.4)}
+.faq-q{width:100%;text-align:left;background:none;border:0;cursor:pointer;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Poppins';font-weight:600;font-size:1.05rem;color:#bbf7d0}
+.faq-q .plus{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--grad-soft);color:var(--teal-d);display:grid;place-items:center;transition:.3s;font-size:1.3rem;line-height:1}
+.faq-item.open .plus{transform:rotate(45deg);background:var(--grad);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a p{padding:0 24px 22px;color:#86efac}
+
+/* ============ FOOTER ============ */
+.footer{background:#0a1a0f;color:#86efac;padding:70px 0 0}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:48px}
+.foot-brand .logo{margin-bottom:18px}
+.foot-brand .brand-word{color:#e2f5e9}
+.foot-brand .brand-word small{color:#6ee7b7}
+.foot-brand p{color:#86efac;font-size:.95rem;max-width:320px;margin-bottom:20px}
+.foot h4{color:#bbf7d0;font-family:'Poppins';font-weight:700;font-size:1rem;margin-bottom:18px;letter-spacing:.02em}
+.foot ul li{margin-bottom:11px}
+.foot ul a{color:#86efac;font-size:.94rem;transition:.2s;display:inline-flex;align-items:center;gap:8px}
+.foot ul a:hover{color:var(--lime);transform:translateX(4px)}
+.foot-contact li{display:flex;gap:10px;align-items:flex-start;color:#86efac;font-size:.94rem;margin-bottom:13px}
+.foot-contact svg{width:17px;height:17px;color:var(--lime);flex:0 0 auto;margin-top:3px}
+.foot-contact a:hover{color:var(--lime)}
+.foot-bottom{border-top:1px solid rgba(74,222,128,.15);padding:22px 0;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.85rem;color:#6ee7b7}
+.foot-bottom .made{display:flex;align-items:center;gap:6px}
+.foot-bottom .made .grad-text{font-weight:700}
+@media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr;gap:34px}}
+@media(max-width:540px){.foot-grid{grid-template-columns:1fr}}
+
+/* ============ FLOATING ACTIONS ============ */
+.fab-wrap{position:fixed;right:18px;bottom:18px;z-index:70;display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+.fab{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:var(--shadow);transition:transform .25s;position:relative}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:26px;height:26px}
+.fab.wa{background:#25d366}
+.fab.call{background:var(--grad)}
+.fab .pulse{position:absolute;inset:0;border-radius:50%;border:2px solid currentColor;opacity:.5;animation:pulse 2s infinite}
+.fab.wa .pulse{border-color:#25d366}
+.fab.call .pulse{border-color:var(--teal)}
+@keyframes pulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.6);opacity:0}}
+.to-top{width:46px;height:46px;border-radius:50%;background:#0f2318;border:1px solid var(--line);color:#4ade80;display:grid;place-items:center;box-shadow:var(--shadow-sm);cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:.3s}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top svg{width:20px;height:20px}
+
+/* ============ REVEAL ANIMATION ============ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== TOP UTILITY BAR ===================== -->
+<div class="topbar">
+  <div class="container">
+    <div class="tb-left">
+      <span class="tag-wrap"><span class="tag">✦ SHAPING UNSEEN REALITIES</span></span>
+      <span>Crafting stories that captivate &amp; designs that endure.</span>
+    </div>
+    <div class="tb-right">
+      <a href="tel:+919003092212" aria-label="Call us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+91 90030 92212</span></a>
+      <a href="mailto:bunic.tech@gmail.com" aria-label="Email us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><span>bunic.tech@gmail.com</span></a>
+      <a href="https://instagram.com/bunic.ads_lab" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>@bunic.ads_lab</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== HEADER ===================== -->
+<header class="header" id="header">
+  <div class="container nav">
+    <a href="#home" class="logo" aria-label="BUNIC AD'S LAB home">
+      <img src="logo.jpeg" alt="BUNIC AD'S LAB" class="logo-img">
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#why">Why Us</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="tel:+919003092212" class="btn btn-ghost"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
+      <a href="#enquiry" class="btn btn-primary">Get a Free Quote</a>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="panel">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#why">Why Us</a>
+    <a href="#faq">FAQ</a>
+    <a href="#enquiry">Enquiry</a>
+    <div class="mm-cta">
+      <a href="#enquiry" class="btn btn-primary">Get a Free Quote</a>
+    </div>
+    <div class="mm-contact">
+      <a href="tel:+919003092212"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+91 90030 92212</a>
+      <a href="mailto:bunic.tech@gmail.com"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>bunic.tech@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">🚀 Advertising · Branding · Digital Marketing</span>
+      <h1 class="reveal d1">
+        <span class="line">Fuel Your</span>
+        <span class="line grad-text">Business Growth</span>
+        <span class="line">With The Right Strategy.</span>
+      </h1>
+      <p class="lead reveal d2">We don't just create ads — <b>we create brands.</b> BUNIC AD'S LAB shapes unseen realities with stories that captivate and designs that endure.</p>
+      <div class="hero-cta reveal d3">
+        <a href="#enquiry" class="btn btn-primary">Start Your Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#services" class="btn btn-ghost">Explore Services</a>
+      </div>
+      <div class="hero-trust reveal d4">
+        <span class="stars">★★★★★</span>
+        <span><b>Trusted</b> by growing brands</span>
+        <span>•</span>
+        <span><b>1+ Year</b> of crafting impact</span>
+      </div>
+      <div class="hero-badges reveal d4">
+        <span>#GrowWithBunic</span><span>Social</span><span>Branding</span><span>SEO</span><span>Ads</span>
+      </div>
+    </div>
+
+    <!-- Hero visual: recreation of the brand's "FUEL YOUR BUSINESS" gauge creative -->
+    <div class="hero-visual reveal d2">
+      <div class="float-chip c1">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></span>
+        <span>+240% Reach<small>Avg. campaign lift</small></span>
+      </div>
+      <div class="fuel-card">
+        <div class="fuel-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <svg class="fuel-logo" viewBox="0 0 64 64" aria-hidden="true"><use href="#lg"/><path d="M36 11 C23 9 16 22 25 29 C31 33 31 39 24 44" fill="none" stroke="url(#lg)" stroke-width="7.5" stroke-linecap="round"/><path d="M8 47 C22 38 42 38 56 47 C44 56 20 56 8 47 Z" fill="url(#lg)"/><circle cx="47" cy="14" r="5.4" fill="url(#lg)"/></svg>
+        <div class="fuel-fb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></div>
+        <div class="fuel-yt" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.3-.4-4.9a2.6 2.6 0 0 0-1.8-1.8C19.2 5 12 5 12 5s-7.2 0-8.8.3A2.6 2.6 0 0 0 1.4 7.1C1 8.7 1 12 1 12s0 3.3.4 4.9a2.6 2.6 0 0 0 1.8 1.8C4.8 19 12 19 12 19s7.2 0 8.8-.3a2.6 2.6 0 0 0 1.8-1.8C23 15.3 23 12 23 12zM10 15V9l5 3-5 3z"/></svg></div>
+        <div class="fuel-body">
+          <div class="k">FUEL YOUR</div>
+          <div class="big">BUSINESS</div>
+          <div class="sub">WITH PROPER <em>DIGITAL MARKETING</em></div>
+        </div>
+        <div class="gauge" aria-hidden="true">
+          <div class="track"></div>
+          <div class="knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 22V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v17"/><path d="M3 13h12"/><path d="M15 8h2a2 2 0 0 1 2 2v6a1.5 1.5 0 0 0 3 0V9l-2-2"/></svg></div>
+          <div class="ends"><span>LOW</span><span>HIGH</span></div>
+        </div>
+      </div>
+      <div class="float-chip c2">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <span>Brands Built<small>Not just ads</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MARQUEE ===================== -->
+<div class="marquee" aria-hidden="true">
+  <div class="track-m">
+    <span>Social Media Marketing</span><span>Branding &amp; Identity</span><span>Performance Ads</span><span>SEO</span><span>Content &amp; Storytelling</span><span>Web &amp; Design</span><span>Media Planning</span>
+    <span>Social Media Marketing</span><span>Branding &amp; Identity</span><span>Performance Ads</span><span>SEO</span><span>Content &amp; Storytelling</span><span>Web &amp; Design</span><span>Media Planning</span>
+  </div>
+</div>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="about-visual reveal">
+      <div class="about-card">
+        <div class="yr">1</div>
+        <div class="yr-l">YEAR OF BUNIC</div>
+        <p class="tagline">Shaping unseen realities — one story, one design, one brand at a time.</p>
+        <span class="milestone">🎉 Celebrating a milestone — thank you for your support!</span>
+      </div>
+      <div class="about-stats">
+        <div class="st"><b data-count="50" data-suffix="+">0</b><span>Projects</span></div>
+        <div class="st"><b data-count="30" data-suffix="+">0</b><span>Happy Clients</span></div>
+        <div class="st"><b data-count="100" data-suffix="%">0</b><span>Dedication</span></div>
+      </div>
+    </div>
+
+    <div class="about-text reveal d1">
+      <span class="eyebrow">About BUNIC</span>
+      <h2>We are a creative <span class="grad-text">advertising &amp; marketing</span> lab.</h2>
+      <p>BUNIC AD'S LAB is where strategy meets imagination. We help businesses stand out, get seen, and grow — by crafting stories that captivate and designs that endure.</p>
+      <p>From a single logo to a full-funnel digital campaign, we treat every brand like our own. Because a business without marketing is like hiding your light under a bushel.</p>
+      <ul class="about-points">
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Strategy-first approach</b> — every pixel backed by purpose.</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>End-to-end execution</b> — branding, content, ads &amp; analytics.</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Real, measurable growth</b> — we fuel results, not just reach.</span></li>
+      </ul>
+      <a href="#enquiry" class="btn btn-primary">Work With Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Work We Do</span>
+      <h2>Services that <span class="grad-text">move the needle</span></h2>
+      <p>A full stack of creative and performance services — pick one, or let us build your complete growth engine.</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
+        <h3>Social Media Marketing</h3>
+        <p>Scroll-stopping content, community building and consistent brand presence across every platform.</p>
+        <div class="tags"><span>Instagram</span><span>Facebook</span><span>Content</span><span>Reels</span></div>
+      </article>
+
+      <article class="svc reveal d1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h3>Branding &amp; Identity</h3>
+        <p>Logos, visual systems and brand voices that make you unforgettable. We don't create ads — we create brands.</p>
+        <div class="tags"><span>Logo</span><span>Guidelines</span><span>Visual Identity</span></div>
+      </article>
+
+      <article class="svc reveal d2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+        <h3>SEO &amp; Visibility</h3>
+        <p>Get found by the right people. On-page, technical and content SEO that drives organic, lasting traffic.</p>
+        <div class="tags"><span>On-page</span><span>Keywords</span><span>Rankings</span></div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+        <h3>Performance Advertising</h3>
+        <p>Data-driven paid campaigns on Meta &amp; Google that turn ad spend into real leads and sales.</p>
+        <div class="tags"><span>Meta Ads</span><span>Google Ads</span><span>ROAS</span></div>
+      </article>
+
+      <article class="svc reveal d1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>Web &amp; Design</h3>
+        <p>Beautiful, fast, conversion-focused websites and creatives designed to endure and to sell.</p>
+        <div class="tags"><span>Websites</span><span>Landing Pages</span><span>Creatives</span></div>
+      </article>
+
+      <article class="svc reveal d2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></div>
+        <h3>Content &amp; Media</h3>
+        <p>Storytelling, video, photography and media planning that put your brand in front of the right crowd.</p>
+        <div class="tags"><span>Video</span><span>Storytelling</span><span>Media Plan</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PHILOSOPHY (DARK) ===================== -->
+<section class="section philosophy">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Our Philosophy</span>
+      <h2>Branding is value, storytelling &amp; trust.</h2>
+      <p>The beliefs that shape every campaign we craft at the lab.</p>
+    </div>
+
+    <div class="quote-grid">
+      <div class="quote reveal">
+        <div class="qmark">“</div>
+        <p>Your brand is what other people say about you when you're not in the room.</p>
+        <div class="by">— Jeff Bezos</div>
+      </div>
+      <div class="quote feat reveal d1">
+        <div class="qmark">“</div>
+        <p>We don't create ads. We create brands.</p>
+        <div class="by">— BUNIC AD'S LAB</div>
+      </div>
+      <div class="quote reveal d2">
+        <div class="qmark">“</div>
+        <p>A business without marketing is like hiding your light under a bushel.</p>
+        <div class="by">— The BUNIC belief</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROCESS ===================== -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">How We Work</span>
+      <h2>A simple path from <span class="grad-text">idea to impact</span></h2>
+      <p>No jargon, no chaos — just a clear, collaborative process.</p>
+    </div>
+
+    <div class="proc-grid">
+      <div class="proc reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <div class="num"></div>
+        <h3>Discover</h3>
+        <p>We listen, learn your goals, audience and market over a free strategy call.</p>
+      </div>
+      <div class="proc reveal d1">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+        <div class="num"></div>
+        <h3>Design</h3>
+        <p>We craft the brand, story and strategy tailored to make you stand out.</p>
+      </div>
+      <div class="proc reveal d2">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+        <div class="num"></div>
+        <h3>Deploy</h3>
+        <p>We launch campaigns, content and ads across the right channels.</p>
+      </div>
+      <div class="proc reveal d3">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></span>
+        <div class="num"></div>
+        <h3>Grow</h3>
+        <p>We measure, optimise and scale — fuelling continuous, real growth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY US ===================== -->
+<section class="section why" id="why">
+  <div class="container why-grid">
+    <div class="why-list">
+      <div class="why-item reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3z"/></svg></span>
+        <div><h4>Strategy + Creativity</h4><p>Beautiful work that's also built to perform and convert.</p></div>
+      </div>
+      <div class="why-item reveal d1">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+        <div><h4>Fast &amp; Reliable</h4><p>Clear timelines, quick turnarounds and zero ghosting.</p></div>
+      </div>
+      <div class="why-item reveal d2">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <div><h4>A Real Partner</h4><p>We treat your brand like our own — transparent and collaborative.</p></div>
+      </div>
+      <div class="why-item reveal d3">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></span>
+        <div><h4>Result-Obsessed</h4><p>We track what matters and optimise until the numbers move.</p></div>
+      </div>
+    </div>
+
+    <div class="why-visual reveal d1">
+      <div class="why-card">
+        <h3>Fuel your growth the right way.</h3>
+        <p>From low to high — we turn the dial on your brand's performance with proper digital marketing.</p>
+        <div class="big-stat"><b data-count="100" data-suffix="%">0</b><span>commitment to<br>your success</span></div>
+        <div class="hastag"><em>#GrowWithBunic</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA BAND ===================== -->
+<section class="section cta-band">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <div>
+        <h2>Ready to shape your brand's unseen reality?</h2>
+        <p>Let's build something that captivates — and endures.</p>
+      </div>
+      <div class="btns">
+        <a href="#enquiry" class="btn btn-dark">Send an Enquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="https://wa.me/919003092212?text=Hi%20BUNIC%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener" class="btn btn-light">WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ENQUIRY / CONTACT ===================== -->
+<section class="section" id="enquiry">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Send us an <span class="grad-text">enquiry</span></h2>
+      <p>Tell us about your project and we'll get back to you within 24 hours. Or reach us directly — we love a good chat.</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Contact info -->
+      <div class="contact-info reveal">
+        <h3>Let's talk growth.</h3>
+        <p>Pick whichever way suits you best — call, message, email or drop an enquiry.</p>
+
+        <div class="ci-list">
+          <div class="ci">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div>
+              <div class="lbl">Call / WhatsApp</div>
+              <a href="tel:+919003092212">+91 90030 92212</a>
+              <a href="tel:+918438560166">+91 84385 60166</a>
+            </div>
+          </div>
+          <div class="ci">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+            <div>
+              <div class="lbl">Email</div>
+              <a href="mailto:bunic.tech@gmail.com">bunic.tech@gmail.com</a>
+            </div>
+          </div>
+          <div class="ci">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></span>
+            <div>
+              <div class="lbl">Website</div>
+              <a href="https://thebunic.com" target="_blank" rel="noopener">thebunic.com</a>
+            </div>
+          </div>
+          <div class="ci">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+            <div>
+              <div class="lbl">Instagram</div>
+              <a href="https://instagram.com/bunic.ads_lab" target="_blank" rel="noopener">@bunic.ads_lab</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="ci-socials">
+          <a href="https://wa.me/919003092212?text=Hi%20BUNIC%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.7-1.2-4.5-4-4.6-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8.9.8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
+          <a href="https://instagram.com/bunic.ads_lab" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="mailto:bunic.tech@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a>
+          <a href="tel:+919003092212" aria-label="Call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Enquiry form -->
+      <div class="enquiry reveal d1">
+        <h3>Project Enquiry Form</h3>
+        <p>Fill this in and your message lands straight in our inbox.</p>
+
+        <form id="enquiryForm" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Full Name <span class="req">*</span></label>
+              <input type="text" id="name" name="name" placeholder="e.g. Rahul Sharma" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone / WhatsApp <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 90000 00000" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="you@email.com" required>
+            </div>
+            <div class="field">
+              <label for="company">Business / Brand</label>
+              <input type="text" id="company" name="company" placeholder="Your company name">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="service">Service Interested In <span class="req">*</span></label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Select a service…</option>
+              <option>Social Media Marketing</option>
+              <option>Branding &amp; Identity</option>
+              <option>SEO &amp; Visibility</option>
+              <option>Performance Advertising</option>
+              <option>Web &amp; Design</option>
+              <option>Content &amp; Media</option>
+              <option>Complete Growth Package</option>
+              <option>Not sure — need advice</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Estimated Budget</label>
+            <div class="budget-grid">
+              <label><input type="radio" name="budget" value="Under ₹10k"><span>Under ₹10k</span></label>
+              <label><input type="radio" name="budget" value="₹10k – ₹50k"><span>₹10k – ₹50k</span></label>
+              <label><input type="radio" name="budget" value="₹50k – ₹1L"><span>₹50k – ₹1L</span></label>
+              <label><input type="radio" name="budget" value="₹1L+"><span>₹1L+</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Tell us about your project <span class="req">*</span></label>
+            <textarea id="message" name="message" placeholder="Goals, timeline, links, anything we should know…" required></textarea>
+          </div>
+
+          <p class="form-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>We respect your privacy. No spam, ever.</p>
+
+          <!-- Honeypot (anti-spam) -->
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+
+          <button type="submit" class="btn btn-primary" id="submitBtn">
+            <span class="btn-label">Send Enquiry</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section faq" id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Questions</span>
+      <h2>Frequently asked</h2>
+      <p>Quick answers before you hit that enquiry button.</p>
+    </div>
+
+    <div class="faq-wrap">
+      <div class="faq-item reveal">
+        <button class="faq-q">What services does BUNIC AD'S LAB offer? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Everything from branding &amp; logo design to social media marketing, performance ads (Meta &amp; Google), SEO, web design and content creation. We can handle a single task or your entire marketing engine.</p></div>
+      </div>
+      <div class="faq-item reveal d1">
+        <button class="faq-q">How do I get started? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Just fill the enquiry form above, or call / WhatsApp us at +91 90030 92212. We'll hop on a free strategy call, understand your goals and share a tailored plan &amp; quote.</p></div>
+      </div>
+      <div class="faq-item reveal d2">
+        <button class="faq-q">How long does a project take? <span class="plus">+</span></button>
+        <div class="faq-a"><p>It depends on scope — a logo or single creative can be ready in days, while a full brand + campaign rollout typically takes 2–4 weeks. We'll give you a clear timeline upfront.</p></div>
+      </div>
+      <div class="faq-item reveal d3">
+        <button class="faq-q">Do you work with small businesses &amp; startups? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Absolutely — that's our sweet spot. We build flexible packages that fit growing brands and scale with you as you grow. #GrowWithBunic</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Where are you located? <span class="plus">+</span></button>
+        <div class="faq-a"><p>We work with clients remotely across India and beyond. Reach us anytime on call, WhatsApp or email at bunic.tech@gmail.com.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand foot">
+        <a href="#home" class="logo">
+          <img src="logo.jpeg" alt="BUNIC AD'S LAB" class="logo-img">
+        </a>
+        <p>Shaping unseen realities. Crafting stories that captivate and designs that endure. We don't create ads — we create brands.</p>
+        <div class="ci-socials" style="margin:0;padding:0">
+          <a href="https://instagram.com/bunic.ads_lab" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://wa.me/919003092212" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2z"/></svg></a>
+          <a href="mailto:bunic.tech@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="foot">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#why">Why BUNIC</a></li>
+          <li><a href="#enquiry">Enquiry</a></li>
+        </ul>
+      </div>
+
+      <div class="foot">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Social Media</a></li>
+          <li><a href="#services">Branding</a></li>
+          <li><a href="#services">SEO</a></li>
+          <li><a href="#services">Performance Ads</a></li>
+          <li><a href="#services">Web &amp; Design</a></li>
+        </ul>
+      </div>
+
+      <div class="foot">
+        <h4>Contact</h4>
+        <ul class="foot-contact">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span><a href="tel:+919003092212">+91 90030 92212</a><br><a href="tel:+918438560166">+91 84385 60166</a></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><a href="mailto:bunic.tech@gmail.com">bunic.tech@gmail.com</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg><a href="https://thebunic.com" target="_blank" rel="noopener">thebunic.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> BUNIC AD'S LAB. All rights reserved.</span>
+      <span class="made">Shaping Unseen Realities · <span class="grad-text">#GrowWithBunic</span></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== FLOATING ACTIONS ===================== -->
+<div class="fab-wrap">
+  <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg></button>
+  <a class="fab wa" href="https://wa.me/919003092212?text=Hi%20BUNIC%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><span class="pulse"></span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.7-1.2-4.5-4-4.6-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8.9.8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
+  <a class="fab call" href="tel:+919003092212" aria-label="Call BUNIC"><span class="pulse"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+</div>
+
+<script>
+/* ---------- Year ---------- */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ---------- Sticky header shadow ---------- */
+const header = document.getElementById('header');
+const toTop = document.getElementById('toTop');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  header.classList.toggle('scrolled', y > 12);
+  toTop.classList.toggle('show', y > 500);
+}, {passive:true});
+toTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ---------- Mobile menu ---------- */
+const burger = document.getElementById('burger');
+const menu = document.getElementById('mobileMenu');
+function closeMenu(){ menu.classList.remove('open'); burger.classList.remove('open'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+burger.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  burger.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', open ? 'true':'false');
+  document.body.style.overflow = open ? 'hidden':'';
+});
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+menu.addEventListener('click', e => { if(e.target === menu) closeMenu(); });
+
+/* ---------- Scroll reveal ---------- */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+}, {threshold:.14});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ---------- Animated counters ---------- */
+const counters = document.querySelectorAll('[data-count]');
+const cio = new IntersectionObserver((entries) => {
+  entries.forEach(en => {
+    if(!en.isIntersecting) return;
+    const el = en.target;
+    const target = +el.dataset.count;
+    const suffix = el.dataset.suffix || '';
+    const dur = 1400; const start = performance.now();
+    function tick(now){
+      const p = Math.min((now - start)/dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if(p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+    cio.unobserve(el);
+  });
+}, {threshold:.6});
+counters.forEach(c => cio.observe(c));
+
+/* ---------- FAQ accordion ---------- */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const ans = item.querySelector('.faq-a');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(o => {
+      o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if(!isOpen){ item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
+  });
+});
+
+/* ---------- Enquiry form submission ----------
+   Sends the enquiry straight to bunic.tech@gmail.com via FormSubmit (no backend needed).
+   On the FIRST real submission, FormSubmit emails a one-time activation link to that
+   address — click it once and every enquiry after that arrives automatically.
+   If the network call fails, it gracefully falls back to opening the visitor's email app. */
+const form = document.getElementById('enquiryForm');
+const status = document.getElementById('formStatus');
+const submitBtn = document.getElementById('submitBtn');
+const btnLabel = submitBtn.querySelector('.btn-label');
+const FORMSUBMIT = 'https://formsubmit.co/ajax/bunic.tech@gmail.com';
+const FALLBACK_MAIL = 'bunic.tech@gmail.com';
+
+function showStatus(type, msg){
+  status.className = 'form-status show ' + type;
+  const icon = type === 'ok'
+    ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>'
+    : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>';
+  status.innerHTML = icon + '<span>' + msg + '</span>';
+}
+
+function buildMailto(data){
+  const body =
+`New enquiry from the BUNIC website:
+
+Name: ${data.name}
+Phone: ${data.phone}
+Email: ${data.email}
+Business: ${data.company || '-'}
+Service: ${data.service}
+Budget: ${data.budget || '-'}
+
+Message:
+${data.message}`;
+  return `mailto:${FALLBACK_MAIL}?subject=${encodeURIComponent('New Enquiry – ' + data.name)}&body=${encodeURIComponent(body)}`;
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  status.className = 'form-status';
+
+  // Basic validation
+  const required = form.querySelectorAll('[required]');
+  let ok = true;
+  required.forEach(f => {
+    if(!f.value.trim()){ ok = false; f.style.borderColor = '#e0457b'; }
+    else { f.style.borderColor = ''; }
+  });
+  const email = form.email.value.trim();
+  if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ ok = false; form.email.style.borderColor = '#e0457b'; }
+  if(!ok){ showStatus('err','Please fill in all the required fields correctly.'); return; }
+
+  // Honeypot check
+  if(form._honey && form._honey.value){ return; }
+
+  const data = {
+    name: form.name.value.trim(),
+    phone: form.phone.value.trim(),
+    email: email,
+    company: form.company.value.trim(),
+    service: form.service.value,
+    budget: (form.querySelector('input[name="budget"]:checked') || {}).value || '',
+    message: form.message.value.trim()
+  };
+
+  submitBtn.disabled = true;
+  btnLabel.textContent = 'Sending…';
+
+  const payload = new FormData();
+  payload.append('name', data.name);
+  payload.append('phone', data.phone);
+  payload.append('email', data.email);
+  payload.append('business', data.company);
+  payload.append('service', data.service);
+  payload.append('budget', data.budget);
+  payload.append('message', data.message);
+  payload.append('_subject', ' New Enquiry from BUNIC Website – ' + data.name);
+  payload.append('_captcha', 'false');
+  payload.append('_template', 'table');
+
+  try {
+    const res = await fetch(FORMSUBMIT, {
+      method:'POST',
+      headers:{'Accept':'application/json'},
+      body: payload
+    });
+    if(res.ok){
+      showStatus('ok','Thanks ' + data.name.split(' ')[0] + '! Your enquiry is on its way — we\'ll reach out within 24 hours. 🎉');
+      form.reset();
+    } else {
+      throw new Error('network');
+    }
+  } catch(err){
+    // Fallback: open visitor's mail client with the enquiry pre-filled
+    showStatus('ok','Opening your email app to send the enquiry… (or call us at +91 90030 92212)');
+    window.location.href = buildMailto(data);
+    form.reset();
+  } finally {
+    submitBtn.disabled = false;
+    btnLabel.textContent = 'Send Enquiry';
+  }
+});
+</script>
+</body>
+</html>
